@@ -1,0 +1,9 @@
+.book_card{
+    border: 1px solid blue;
+    border-radius: 0.25rem;
+    display: block;
+}
+
+.book_image{
+    height: 100px;
+}

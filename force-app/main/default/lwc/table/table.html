@@ -1,0 +1,16 @@
+<template>
+   
+    <div>  
+        
+        <lightning-datatable 
+                hide-checkbox-column
+                show-row-number-column
+                key-field="Id"
+                data={Books__c.data}
+                columns={columns}
+                onrowaction={handleRowAction}
+                >
+                
+        </lightning-datatable>
+    </div>
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <div > 
+        <lightning-datatable
+                hide-checkbox-column
+                show-row-number-column
+                key-field="Id"
+                data={Books_Order__c.data}
+                columns={columns}
+                >
+            </lightning-datatable>
+    </div>
+</template>

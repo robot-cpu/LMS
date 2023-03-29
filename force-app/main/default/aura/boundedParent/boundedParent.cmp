@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="parentVar" type="String" default="Parent value"/>
+    
+    <aura:handler name="change" value="{!v.parentVar}" action="{!c.onParentVarChange}" />
+    
+    <c:boundedchild childVar = "{!v.parentVar}" />
+    
+    Parent value : {!v.parentVar}
+    <br/><br/>
+    
+    <lightning:button label="update parent value" onclick="{!c.updateParent}" />
+</aura:component>

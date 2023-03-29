@@ -1,0 +1,56 @@
+<template>
+        <div class="slds-size_2-of-5 slds-align_absolute-center ">
+            <lightning-carousel disable-auto-scroll>
+                <template if:true={Book}>
+                    <template for:each={Book} for:item="Book">
+                        <lightning-carousel-image 
+                        key={Book.id} 
+                        src={Book.src} 
+                        header={Book.header}
+                        description={Book.description} 
+                        alternative-text="test" 
+                        href={Book.href}>
+                        </lightning-carousel-image>
+                    </template>
+                </template>
+            </lightning-carousel>
+        </div>
+</template>
+
+
+<!--
+    <lightning-carousel>
+        <lightning-carousel-image
+        src="https://m.media-amazon.com/images/I/31aUOh0KO4L._SX330_BO1,204,203,200_.jpg"
+        header="Quantam Warrior"
+        description="Finance"
+        alternative-text="test"
+        href="https://creative-moose-ut1vfm-dev-ed.trailblaze.lightning.force.com/lightning/r/Books__c/a052w00000G4KW9AAN/view"
+        >
+        </lightning-carousel-image>
+
+        <lightning-carousel-image
+        src="https://i.ebayimg.com/images/g/23wAAOSwAyViQFvV/s-l500.png"
+        header="Psychology of Money"
+        description="Finance"
+        alternative-text="test"
+        href="https://creative-moose-ut1vfm-dev-ed.trailblaze.lightning.force.com/lightning/r/Books__c/a052w00000G4KUhAAN/view"
+        >
+        </lightning-carousel-image>
+        <lightning-carousel-image
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMSFA35fRMrK008wrHW7NogTTJwsVVzLQ7-A&usqp=CAU"
+        header="Rich Dad Poor Dad"
+        description="Finance"
+        alternative-text="test"
+        href="https://creative-moose-ut1vfm-dev-ed.trailblaze.lightning.force.com/lightning/r/Books__c/a052w00000G4SGCAA3/view"
+        >
+        </lightning-carousel-image>
+        <lightning-carousel-image
+        src="https://m.media-amazon.com/images/I/31aUOh0KO4L._SX330_BO1,204,203,200_.jpg"
+        header="Time and Price Theory"
+        description="Finance"
+        alternative-text="test"
+        href="https://creative-moose-ut1vfm-dev-ed.trailblaze.lightning.force.com/lightning/r/Books__c/a052w00000G4KVBAA3/view"
+        >
+        </lightning-carousel-image>
+    </lightning-carousel>  -->

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="combobox">
+        <lightning-combobox label="Order Created" value={value} placeholder="select and order"
+        options={options} onchange={handleChangedValue}
+        >
+        </lightning-combobox>
+    </lightning-card>
+
+<template if:true={cardVisible}>
+    <lightning-card title="Datatable card">
+        <div style="height: 200px;">
+            <lightning-datatable key-field="id"
+            data={data}
+            columns={columns}
+            >
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template> 
+</template>

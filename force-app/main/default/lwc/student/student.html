@@ -1,0 +1,18 @@
+<template>
+    <lightning-carousel>
+        <div class="slds-m-around_medium">
+            <template for:each={student} for:item="student">
+                <lightning-carousel-image 
+                    key={student.id} 
+                    src={student.src} 
+                    header={student.header} 
+                    description={student.description}
+                    alternative-text="test" 
+                    href={student.href}
+                
+                >   
+                </lightning-carousel-image>
+            </template>
+        </div>
+    </lightning-carousel>
+</template>

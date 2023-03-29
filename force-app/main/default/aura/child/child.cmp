@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:registerEvent name="cmpEvent" type="c:ComponentEvent"/>
+    <aura:attribute name="messageString" type="string" />
+    
+    <h1>
+		component event notifier    
+    </h1>
+    
+    <ui:inputText label="Message" value="{!v.messageString}" />
+    <ui:button label="fire component event" press="{!c.fireComponentEvent}" />
+    
+</aura:component>

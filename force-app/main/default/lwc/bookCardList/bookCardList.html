@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Search book">
+        <lightning-input type="search" onchange={handleSearch} variant="label-hidden"
+            class="slds-var-m-bottom_small slds-p-left_medium slds-p-right_medium" placeholder="Search for Books"
+            value={searchWords}>  
+        </lightning-input> 
+        <c-bookcard-child ></c-bookcard-child> 
+    </lightning-card>   
+</template>
