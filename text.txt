@@ -1,6 +1,5 @@
 hello world
-<<<<<<< HEAD
-testing second
-=======
 testting merge conflict
->>>>>>> main
+
+        merge conflict
+    
