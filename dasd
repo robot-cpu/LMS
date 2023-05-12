@@ -1,0 +1,11 @@
+[33mcommit ddece35ddfc477ec3babd23ca348335c918eab08[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Kunjan Giri <kunjan.giri@compliancequest.com>
+Date:   Mon Apr 3 12:24:29 2023 +0545
+
+    added jenkinsfile
+
+[33mcommit 8dca375dc8ac4a417d786967aab9ec2331f33cf3[m[33m ([m[1;32mstaging[m[33m, [m[1;32mAD0555[m[33m)[m
+Author: Kunjan Giri <kunjan.giri@compliancequest.com>
+Date:   Wed Mar 29 16:33:07 2023 +0545
+
+    initial commit
