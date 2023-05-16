@@ -1,8 +1,3 @@
-test0
-test0
-test2
-test 3
+this is the only line in staging branch
 
-test4 
-
-testing delta file
+this is new line
