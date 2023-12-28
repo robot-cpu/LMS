@@ -3,4 +3,5 @@ node(){
   echo "this is commit test"
 
   echo "testing commits"
+  echo "testing changelog"
 }
