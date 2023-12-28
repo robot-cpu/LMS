@@ -1,9 +1,19 @@
-node(){
-  echo "this is oboe"
-  echo "this is commit test"
+node {
+    stage('Checkout') {
+        // Checkout code from the repository
+        checkout scm
+    }
 
-  echo "testing commits"
+    stage('Display Changelog') {
+        def changeLogSets = currentBuild.changeSets
+        for (int i = 0; i < changeLogSets.size(); i++) {
+            def entries = changeLogSets[i].items
+            for (int j = 0; j < entries.length; j++) {
+                def entry = entries[j]
+                echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}"
+            }
+        }
+    }
 
-  echo "testing changelog from feature"
-  echo "testing changelog"
+    // Add other stages as needed
 }
