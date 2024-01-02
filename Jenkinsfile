@@ -15,8 +15,8 @@ node {
         }
     }
     stage("ada"){
-            def commitAuthors = getCommitAuthors()
-         echo "${commitAuthors}"
+        getCommitAuthors()
+         
 
     }
     
@@ -31,7 +31,7 @@ node {
     )
 
 }
-    def getCommitAuthors() {
+  def getCommitAuthors() {
         def changeLogSets = currentBuild.changeSets
         def authors = []
         for (entry in changeLogSets) {
@@ -42,5 +42,7 @@ node {
                 }
             }
         }
-        return authors.join(', ')
+        def f = authors.join(', ')
+        echo "${f}"
+        return f
     }
