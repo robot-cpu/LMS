@@ -13,12 +13,6 @@ node {
                 def entry = entries[j]
                 echo "entry : ${entry}"
                 echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}  "
-                echo entry.inspect() // or use echo entry.dump()
-
-            // Or, if you want to loop through the properties and print their names and values
-            entry.properties.each { prop ->
-                echo "${prop.name} : ${prop.value}"
-            }
 
             }
         }
