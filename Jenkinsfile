@@ -26,5 +26,4 @@ node {
 
             }
         }
-       // return authors.join(', ')
     }
