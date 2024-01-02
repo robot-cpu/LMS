@@ -11,6 +11,7 @@ node {
             def entries = changeLogSets[i].items
             for (int j = 0; j < entries.length; j++) {
                 def entry = entries[j]
+                echo "entry : ${entry}"
                 echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}"
             }
         }
