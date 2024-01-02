@@ -4,22 +4,22 @@ node {
         checkout scm
     }
 
-    stage('Display Changelog') {
-        def changeLogSets = currentBuild.changeSets
-        echo "${changeLogSets}"
-        for (int i = 0; i < changeLogSets.size(); i++) {
-            def entries = changeLogSets[i].items
-            for (int j = 0; j < entries.length; j++) {
-                def entry = entries[j]
-                echo "entry : ${entry}"
-                echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}  "
+    // stage('Display Changelog') {
+    //     def changeLogSets = currentBuild.changeSets
+    //     echo "${changeLogSets}"
+    //     for (int i = 0; i < changeLogSets.size(); i++) {
+    //         def entries = changeLogSets[i].items
+    //         for (int j = 0; j < entries.length; j++) {
+    //             def entry = entries[j]
+    //             echo "entry : ${entry}"
+    //             echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}  "
 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
     stage("ada"){
-            def commitAuthors = getCommitAuthors()
-         echo "${commitAuthors}"
+        def commitAuthors = getCommitAuthors()
+        echo "${commitAuthors}"
 
     }
     
@@ -36,15 +36,14 @@ node {
 }
     def getCommitAuthors() {
         def changeLogSets = currentBuild.changeSets
-        def authors = []
-        for (entry in changeLogSets) {
-            for (change in entry.getItems()) {
-                echo "${change}"
-                // def author = change.getAuthor().getAddress()
-                // if (!authors.contains(author)) {
-                //     authors.add(author)
-                // }
+        for (int i = 0; i < changeLogSets.size(); i++) {
+            def entries = changeLogSets[i].items
+            for (int j = 0; j < entries.length; j++) {
+                def entry = entries[j]
+                echo "entry : ${entry}"
+                echo "Commit by ${entry.author} on ${entry.commitId}: ${entry.msg}  "
+
             }
         }
-        return authors.join(', ')
+       // return authors.join(', ')
     }
