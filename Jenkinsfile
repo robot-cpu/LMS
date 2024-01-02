@@ -6,6 +6,7 @@ node {
 
     stage('Display Changelog') {
         def changeLogSets = currentBuild.changeSets
+        echo "${changeLogSets}"
         for (int i = 0; i < changeLogSets.size(); i++) {
             def entries = changeLogSets[i].items
             for (int j = 0; j < entries.length; j++) {
@@ -15,8 +16,8 @@ node {
         }
     }
     stage("ada"){
-        getCommitAuthors()
-         
+            def commitAuthors = getCommitAuthors()
+         echo "${commitAuthors}"
 
     }
     
@@ -31,18 +32,17 @@ node {
     )
 
 }
-  def getCommitAuthors() {
+    def getCommitAuthors() {
         def changeLogSets = currentBuild.changeSets
         def authors = []
         for (entry in changeLogSets) {
             for (change in entry.getItems()) {
-                def author = change.getAuthor().getAddress()
-                if (!authors.contains(author)) {
-                    authors.add(author)
-                }
+                echo "${change}"
+                // def author = change.getAuthor().getAddress()
+                // if (!authors.contains(author)) {
+                //     authors.add(author)
+                // }
             }
         }
-        def f = authors.join(', ')
-        echo "${f}"
-        return f
+        return authors.join(', ')
     }
