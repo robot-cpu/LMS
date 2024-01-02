@@ -14,6 +14,12 @@ node {
             }
         }
     }
+    stage("ada"){
+            def commitAuthors = getCommitAuthors()
+         echo "${commitAuthors}"
+
+    }
+    
     emailext (
             subject: '${DEFAULT_SUBJECT}', 
             to: '$DEFAULT_RECIPIENTS',
@@ -25,3 +31,16 @@ node {
     )
 
 }
+    def getCommitAuthors() {
+        def changeLogSets = currentBuild.changeSets
+        def authors = []
+        for (entry in changeLogSets) {
+            for (change in entry.getItems()) {
+                def author = change.getAuthor().getAddress()
+                if (!authors.contains(author)) {
+                    authors.add(author)
+                }
+            }
+        }
+        return authors.join(', ')
+    }
